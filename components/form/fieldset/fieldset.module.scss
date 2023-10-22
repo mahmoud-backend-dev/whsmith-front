@@ -1,0 +1,43 @@
+.container {
+  margin-bottom: 2rem;
+}
+
+.fieldset {
+  background: var(--background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-border);
+  position: relative;
+}
+
+.content {
+  position: relative;
+  background: var(--background);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+
+  .legend {
+    align-items: center;
+    display: inline-flex;
+    word-break: break-word;
+    scroll-margin-top: 24px;
+    margin-bottom: 12px;
+    font-size: 1.25rem;
+    letter-spacing: -0.020625rem;
+    font-weight: 600;
+  }
+}
+
+.footer {
+  position: relative;
+  min-height: 57px;
+  align-items: center;
+  background-color: var(--background-secondary);
+
+  border-top: 1px solid var(--border-color);
+  color: var(--foreground-color);
+  display: flex;
+  font-size: 0.875rem;
+  padding: 12px 24px;
+  line-height: 1.6;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}

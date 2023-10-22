@@ -1,0 +1,135 @@
+@import "@/styles/utils.scss";
+
+.home > * {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(var(--foreground-inverted-rgb));
+  background-color: rgb(var(--background-inverted-rgb));
+  min-height: 90dvh;
+
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 1;
+    gap: 2rem;
+
+    button {
+      padding-left: 3rem;
+      padding-right: 3rem;
+      margin-top: 1rem;
+    }
+  }
+
+  @include max-xl {
+    .image {
+      display: none;
+    }
+  }
+
+  @include max-md {
+    .content {
+      gap: 1rem;
+    }
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+
+  & > p,
+  & > h2 {
+    text-align: center;
+  }
+  p {
+    margin-top: 1rem;
+    max-width: 50rem;
+  }
+}
+
+.books {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.offer {
+  height: 500px;
+  margin-top: 5rem;
+  background-color: rgb(var(--background-inverted-rgb));
+  padding: 1rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 1rem;
+    color: rgb(var(--foreground-inverted-rgb));
+    max-width: 700px;
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    @include md {
+      margin-inline-start: 5rem;
+    }
+
+    @include lg {
+      margin-inline-start: 7rem;
+    }
+
+    @include xl {
+      margin-inline-start: 15rem;
+    }
+  }
+
+  .form {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+
+    input {
+      flex-grow: 1;
+    }
+
+    @include md {
+      button {
+        padding-left: 3rem;
+        padding-right: 3rem;
+      }
+    }
+  }
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 5rem;
+
+  // & > *:nth-child(even) {
+  //   transform: translateY(3rem);
+  // }
+}

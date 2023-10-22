@@ -1,0 +1,25 @@
+@import "@/styles/utils";
+
+.layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  @include max-md {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.container {
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.body {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 5rem;
+  overflow: hidden auto;
+}

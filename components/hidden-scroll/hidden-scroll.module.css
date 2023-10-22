@@ -1,0 +1,10 @@
+.hiddenScroll {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hiddenScroll::-webkit-scrollbar {
+  display: none;
+}

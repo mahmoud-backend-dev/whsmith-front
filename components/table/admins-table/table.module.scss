@@ -1,0 +1,7 @@
+@import '@/styles/utils.scss';
+
+.categoryCell {
+  @include max-sm {
+    display: none;
+  }
+}

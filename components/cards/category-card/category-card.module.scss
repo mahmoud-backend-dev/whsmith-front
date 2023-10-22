@@ -1,0 +1,39 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 200px;
+  height: 230px;
+  border-radius: 20px;
+  background-color: rgb(244, 244, 244);
+  padding: 2rem;
+  gap: 2.5rem;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  user-select: none;
+  cursor: pointer;
+
+  .icon {
+    color: rgba(0, 0, 0, 0.1);
+  }
+
+  h3 {
+    color: var(--foreground-color);
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: rgb(var(--background-inverted-rgb));
+
+    .icon {
+      color: rgb(var(--foreground-inverted-rgb));
+    }
+
+    h3 {
+      color: rgb(var(--foreground-inverted-rgb));
+    }
+  }
+}

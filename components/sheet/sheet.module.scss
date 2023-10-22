@@ -1,0 +1,94 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.15);
+
+  &[data-state="open"] {
+    animation: fadeIn 150ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &[data-state="closed"] {
+    animation: fadeOut 150ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
+.content {
+  background-color: #fff;
+  box-shadow: 0 0 32px rgba(0, 0, 0, 0.25), 0 0 16px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 300;
+  will-change: transform;
+
+  &[data-state="open"] {
+    animation: slideIn 150ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &[data-state="closed"] {
+    animation: slideOut 150ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &.top {
+    width: 100%;
+    height: 300px;
+    bottom: auto;
+    --transform: translate3d(0, -100%, 0);
+  }
+
+  &.bottom {
+    width: 100%;
+    height: 300px;
+    top: auto;
+    --transform: translate3d(0, 100%, 0);
+  }
+
+  &.left {
+    left: 0;
+    --transform: translate3d(-100%, 0, 0);
+  }
+
+  &.right {
+    right: 0;
+    --transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: var(--transform);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: var(--transform);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

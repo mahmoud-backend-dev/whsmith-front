@@ -1,0 +1,28 @@
+.input {
+  display: inline-flex;
+  flex-direction: column;
+  border: none;
+  width: 100%;
+  font-weight: 500;
+
+  label {
+    font-size: 13px;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: var(--foreground-color);
+    display: block;
+  }
+
+  .error {
+    color: rgb(var(--danger-rgb));
+    font-size: 13px;
+    margin-top: 5px;
+  }
+}
+
+.control {
+  &.focused {
+    border-color: rgba(var(--main-rgb), 0.21) !important;
+    box-shadow: 0 0 0 2px rgb(var(--focus-input-rgb));
+  }
+}

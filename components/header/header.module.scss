@@ -1,0 +1,207 @@
+@import "@/styles/utils.scss";
+
+.header {
+  background-color: rgb(var(--background-inverted-rgb));
+  padding-top: 1rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  @include md {
+    padding-bottom: 1rem;
+  }
+}
+
+.mobileSearchBar {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+
+  .searchBar {
+    width: 100% !important;
+  }
+
+  @include md {
+    display: none;
+  }
+}
+
+.searchButton {
+  cursor: pointer;
+}
+
+.actions,
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: transparent !important;
+
+  @include md {
+    .categoriesButton {
+      display: none;
+    }
+  }
+
+  .categoriesButton {
+    cursor: pointer;
+    margin-inline-start: 1px;
+  }
+}
+
+.closeButton {
+  cursor: pointer;
+}
+
+.logo {
+  display: block;
+  width: 150px;
+  height: fit-content;
+  transition: 200ms ease-out;
+  color: rgb(var(--foreground-inverted-rgb));
+
+  &:focus-visible {
+    outline: 4px solid rgb(var(--focus-input-rgb));
+  }
+
+  @include max-md {
+    width: 130px;
+  }
+}
+
+.searchBar {
+  width: 450px !important;
+  max-width: 100%;
+}
+
+.navbar {
+  .navbarHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+
+    @include md {
+      display: none;
+    }
+  }
+  .navbarList {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1rem;
+
+    @include md {
+      gap: 1.5rem;
+      color: white;
+      text-align: center;
+      background-color: rgba(28, 74, 160, 1);
+      justify-content: center;
+      align-items: center;
+      height: 40px;
+
+      li {
+        height: 100%;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+        padding: 0 0.7rem;
+        color: white;
+        font-size: 1rem;
+        height: 100%;
+        line-height: 0;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+  }
+
+  @include max-md {
+    position: fixed;
+    background-color: white;
+    height: 100%;
+    width: 300px;
+    max-width: 100%;
+    top: 0;
+    right: 0;
+    padding: 2rem;
+    transition: 200ms ease-out;
+    transform: translateX(0);
+    z-index: 30;
+
+    .navbarList {
+      flex-direction: column;
+      a {
+        display: block;
+        padding: 0.5rem;
+        border-bottom: 1px solid rgba(217, 217, 217, 0.6);
+      }
+    }
+
+    &.hide {
+      transform: translateX(100%);
+    }
+  }
+}
+
+@include max-md {
+  .desktopSearchBar {
+    display: none;
+  }
+}
+
+.languages {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  list-style: none;
+  margin-top: 10px;
+  gap: 10px;
+  overflow: hidden auto;
+
+  .language {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s ease-in-out;
+    border-radius: var(--border-radius);
+    gap: 5px;
+
+    & > * {
+      margin: 0 10px;
+    }
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    .originalName {
+      font-size: 15px;
+      color: var(--foreground-color);
+      line-height: 1;
+    }
+
+    .translatedName {
+      font-size: 13px;
+      color: #666;
+    }
+
+    &.active {
+      background-color: #f5f5f5;
+    }
+  }
+}

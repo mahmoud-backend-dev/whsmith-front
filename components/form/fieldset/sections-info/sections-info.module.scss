@@ -1,0 +1,46 @@
+@import "@/styles/utils.scss";
+
+.form {
+  margin-top: 2rem;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1rem;
+  width: 100%;
+
+  & > * {
+    flex-grow: 1;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .language {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: rgb(var(--slate-11));
+
+    & > span {
+      font-size: 14px;
+
+      @include max-md {
+        display: none;
+      }
+    }
+    .select {
+      width: 100px;
+    }
+  }
+}
+
+.textarea {
+  height: 150px;
+}

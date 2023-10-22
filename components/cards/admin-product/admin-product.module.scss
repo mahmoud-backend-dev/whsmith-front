@@ -1,0 +1,19 @@
+.image {
+  aspect-ratio: 18 / 21;
+  width: clamp(200px, 300px, 100%);
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  background-color: var(--slate-4);
+  border-radius: var(--card-border-radius);
+}
+
+.link {
+  position: relative;
+}
+
+.iconButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

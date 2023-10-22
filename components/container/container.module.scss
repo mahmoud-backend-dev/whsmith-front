@@ -1,0 +1,51 @@
+@import "@/styles/utils.scss";
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  @include max-md {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.products {
+  display: grid;
+  position: relative;
+  grid-auto-flow: row dense;
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-columns: repeat(var(--breakpoint, 1), minmax(0, 1fr));
+  gap: 2.5rem 1.5rem;
+
+  &.normal {
+    @include sm {
+      --breakpoint: 2;
+    }
+    @include lg {
+      --breakpoint: 3;
+    }
+    @include xl {
+      --breakpoint: 4;
+    }
+
+    @include rwd(1440px) {
+      --breakpoint: 5;
+    }
+  }
+
+  &.small {
+    @include sm {
+      --breakpoint: 1;
+    }
+    @include lg {
+      --breakpoint: 2;
+    }
+    @include xl {
+      --breakpoint: 3;
+    }
+  }
+}
